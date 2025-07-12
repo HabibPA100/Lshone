@@ -1,0 +1,209 @@
+    /* Header background color animation  */
+    @keyframes rainbow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .animated-rainbow {
+        background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+        background-size: 1400% 1400%;
+        animation: rainbow 8s ease infinite;
+        color: white;
+    }
+
+    /* বড় স্ক্রিনে শুধু কালো কালার */
+    @media (min-width: 1024px) {
+        .animated-rainbow {
+            background: #000 !important;
+            animation: none !important;
+        }
+    }
+
+    .orbit-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .orbit-ball {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 50;
+    }
+
+    .orbit-red {
+      background-color: red;
+      animation: orbit-red 16s linear infinite;
+      -webkit-animation: orbit-red 16s linear infinite;
+}
+
+    .orbit-green {
+      background-color: green;
+      animation: orbit-green 16s linear infinite;
+      -webkit-animation: orbit-green 16s linear infinite;
+}
+
+    @keyframes orbit-red {
+      0%   { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+      25%  { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+      50%  { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+      75%  { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+      100% { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+    }
+
+    @keyframes orbit-green {
+      0%   { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+      25%  { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+      50%  { top: 0%; left: 50%; transform: translate(-50%, -50%); }
+      75%  { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+      100% { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+    }
+
+    /*  card animation  */
+    @keyframes border-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-border-spin {
+        animation: border-spin 8s linear infinite;
+        transition: animation-duration 0.3s ease;
+        border-radius: inherit;
+    }
+
+    /* Hover speed-up effect */
+    .group:hover .animate-border-spin {
+        animation-duration: 2s;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    /* Outer Glow */
+    .glow-border {
+        box-shadow: 0 0 10px rgba(255, 0, 150, 0.4),
+                    0 0 20px rgba(255, 200, 0, 0.4),
+                    0 0 30px rgba(0, 255, 150, 0.4);
+    }
+
+    /* Left slider  */
+    h1 {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    background: rgb(0, 103, 187);
+    color: #fff;
+    height: 50px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 48px;
+}
+
+/* Card border animation  */
+
+    /* Rotating border container */
+    .rotating-border {
+        position: relative;
+        padding: 2px;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    /* Rotating animated border */
+    .rotating-border::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+            from 0deg,
+            #ff0000,
+            #00ff00,
+            #0000ff,
+            #ffff00,
+            #ff00ff,
+            #00ffff,
+            #ff0000
+        );
+        animation: rotate 4s linear infinite;
+        z-index: -1;
+    }
+
+    /* Inner content card */
+    .card-inner {
+        background-color: white;
+        border-radius: 8px;
+        position: relative;
+        z-index: 1;
+        padding: 12px;
+    }
+
+    /* Rotating animation */
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* left 0 bottom 0 animation  */
+    /* মূল container এর জন্য */
+    .left-bottom-border {
+        position: relative;
+        padding: 2px;
+    }
+
+    /* Animated border */
+    .left-bottom-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        animation: animated-border 4s linear infinite;
+        pointer-events: none;
+        box-sizing: border-box;
+    }
+
+    /* Keyframe animation */
+    @keyframes animated-border {
+        0% {
+            border-color: red transparent transparent transparent;
+        }
+        25% {
+            border-color: transparent orange transparent transparent;
+        }
+        50% {
+            border-color: transparent transparent yellow transparent;
+        }
+        75% {
+            border-color: transparent transparent transparent green;
+        }
+        100% {
+            border-color: red transparent transparent transparent;
+        }
+    }
+    /* For single card page slider  */
+    #slider-track {
+      transition: transform 0.5s ease-in-out;
+    }

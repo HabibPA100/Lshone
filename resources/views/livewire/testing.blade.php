@@ -1,0 +1,1 @@
+E-commerce website product page image zoom | image magnifier on mouse hover | zoom in image on hover
