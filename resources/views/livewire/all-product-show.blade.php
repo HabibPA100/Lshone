@@ -5,9 +5,9 @@
             <h1 class="text-3xl font-bold mb-2">সকল পণ্য সমূহ </h1>
         </a>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             @foreach ($products as $product)
-            <div class="relative bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl group"
+            <div class="relative bg-white rounded-xl p-1 shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl group"
                 data-aos="fade-up" data-aos-duration="800">
                 
                 <!-- Animated Border -->
@@ -19,7 +19,7 @@
                 </div>
 
                 <!-- Card Content -->
-                <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->title }}" class="w-full object-cover aspect-[4/4] relative z-10">
+                <img src="{{ asset('storage/' . $product->product_image) }}" alt="{{ $product->title }}" class="w-full h-auto object-cover rounded-md relative z-10">
                 
                 <div class="p-4 space-y-3 relative z-10">
                     @php

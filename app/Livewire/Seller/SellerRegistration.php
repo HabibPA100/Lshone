@@ -20,7 +20,7 @@ class SellerRegistration extends Component
     public function submit()
     {
         $this->validate([
-            'profile_image'      => 'nullable|image|mimes:jpg,jpeg,png|max:1024',
+            'profile_image'      => 'nullable|image|mimes:jpg,jpeg,png|max:3072',
             'name'               => 'required|string|max:100',
             'email'              => ['required', 'email', new UniqueEmailAcrossTables()],
             'password'           => 'required|min:8|confirmed',

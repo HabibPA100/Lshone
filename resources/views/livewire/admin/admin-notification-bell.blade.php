@@ -19,7 +19,7 @@
         </button>
 
         {{-- Notification Dropdown --}}
-        <div x-show="open" x-transition class="absolute right-0 mt-2 w-96 bg-white shadow-xl rounded-md z-50">
+        <div x-show="open" x-transition class="absolute right-0 mt-2 w-44 lg:w-96 bg-white shadow-xl rounded-md z-50">
             <div class="px-4 py-2 border-b">
                 <h3 class="text-sm font-semibold text-gray-700">নোটিফিকেশন তালিকা</h3>
             </div>

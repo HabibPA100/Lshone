@@ -20,7 +20,7 @@ class BuyerRegistration extends Component
         'password' => 'required|confirmed|min:8',
         'phone' => 'required|string|min:10',
         'address' => 'required|string|max:500',
-        'profile_image' => 'nullable|image|mimes:jpg,png,jpeg|max:1024',
+        'profile_image' => 'nullable|image|mimes:jpg,png,jpeg|max:3072',
         'terms' => 'accepted'
     ];
 
