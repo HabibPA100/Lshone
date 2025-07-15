@@ -149,7 +149,7 @@
          <div>
             <label class="block font-medium mb-1">Stock Quantity ( গুরুত্বপূর্ণ * )</label>
             <input type="text" wire:model.defer="stock_quantity" class="input">
-            @error($stock_quantity) <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            @error('stock_quantity') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <!-- Additional Fields -->

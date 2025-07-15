@@ -31,8 +31,8 @@ class NewProductCreate extends Component
     public function rules()
     {
         return [
-            'product_image' => $this->productId ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif' : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif',
-            'slash_image' => $this->productId ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif' : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif',
+            'product_image' => $this->productId ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072' : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072',
+            'slash_image' => $this->productId ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072' : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072',
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'status' => 'required|in:in stock,out of stock',

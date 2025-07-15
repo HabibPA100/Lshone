@@ -6,7 +6,7 @@
                 <h1 class="text-3xl font-bold text-center text-white mb-8">🎁 Other Package</h1>
             </a>
 
-            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
                 @foreach($others as $other)
                     <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-2 relative group" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         
