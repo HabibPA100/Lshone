@@ -52,8 +52,7 @@
                     </div>
 
                     <div class="flex justify-between items-center pt-2">
-                        <button class="text-sm bg-gray-700 text-green-700 px-3 py-1 rounded hover:bg-gray-300 transition"><a href="{{ route('cart.details', $product->id) }}" class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 transition">View</a>
-                        </button>
+                        <a href="{{ route('cart.details', $product->id) }}" class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 transition">View</a>
                         <livewire:add-to-cart 
                                         :productId="$product->id" 
                                         :key="$product->id" 

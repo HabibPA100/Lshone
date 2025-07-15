@@ -6,10 +6,13 @@
 
     {{-- Slider --}}
     @include('frontend.layouts.components.slider')
-
+    <div>
+        <h1> এই সাইট টি এখন টেস্টিং মুডে আছে সিগরই চালু হবে ইনশা-আল্লাহ </h1>
+    </div>
     {{-- Product List --}}
 
     {{-- Livewire Components --}}
+    <livewire:other-product-show />
     <livewire:gift-cart-show />
     <livewire:all-product-show />
     <livewire:panjabi-show />

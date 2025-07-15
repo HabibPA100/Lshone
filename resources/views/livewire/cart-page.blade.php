@@ -111,7 +111,8 @@
                         <textarea wire:model="order_note" placeholder="অর্ডার সম্পর্কিত কোনো নোট (ঐচ্ছিক)" rows="2" class="w-full focus:outline-none"></textarea>
                     </div>
                 </div>
-
+                
+                <p>ঢাকা ব্যতিত অন্য সকল স্থানের ক্ষেত্রে আপনার নিকটস্থ কুরিয়ার থেকে পার্সেল টি গ্রহণ করতে হবে ! </p>
                 <!-- ✅ সাবমিট বাটন -->
                 <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md transition duration-300">
                     ✅ অর্ডার কনফার্ম করুন
