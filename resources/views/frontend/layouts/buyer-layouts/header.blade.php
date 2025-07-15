@@ -7,7 +7,7 @@
                  viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"></path>
             </svg>
-            <span class="text-xl font-bold text-gray-800">Buyer Dashboard</span>
+            <span class="hidden md:block text-xl font-bold text-gray-800">Buyer Dashboard</span>
         </div>
 
         <!-- Right side icons -->

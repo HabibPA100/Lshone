@@ -4,7 +4,7 @@
         <!-- Logo / Title -->
         <div class="flex items-center space-x-2">
             <a href="{{ url('/admin/dashboard') }}">
-                <span class="text-xl font-bold text-gray-800">Admin Dashboard</span>
+                <span class="hidden md:block text-xl font-bold text-gray-800">Admin Dashboard</span>
             </a>
         </div>
 

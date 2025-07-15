@@ -4,7 +4,7 @@
         <!-- Logo / Title -->
         <div class="flex items-center space-x-2">
             <a href="{{ route('seller.dashboard') }}">
-                <span class="text-xl font-bold text-gray-800">Seller Dashboard</span>
+                <span class="hidden md:block text-xl font-bold text-gray-800">Seller Dashboard</span>
             </a>
         </div>
 

@@ -13,21 +13,21 @@
     <form wire:submit.prevent="save" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded shadow">
         <!-- Title -->
         <div>
-            <label class="block font-medium mb-1">Title</label>
+            <label class="block font-medium mb-1">Title ( গুরুত্বপূর্ণ * )</label>
             <input type="text" wire:model.defer="title" class="input" placeholder="Product Title">
             @error('title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <!-- Description -->
         <div class="md:col-span-2">
-            <label class="block font-medium mb-1">Description</label>
+            <label class="block font-medium mb-1">Description ( গুরুত্বপূর্ণ * ) </label>
             <textarea wire:model.defer="description" class="input h-24" placeholder="Product Description"></textarea>
             @error('description') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <!-- Images -->
         <div>
-            <label class="block font-medium mb-1">Product Image</label>
+            <label class="block font-medium mb-1">Product Image Width (200px)	Height (200px) গুরুত্বপূর্ণ * </label>
             <input type="file" wire:model="product_image" class="input">
             @if (is_object($product_image) && method_exists($product_image, 'temporaryUrl'))
                 <img src="{{ $product_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover">
@@ -38,7 +38,7 @@
         </div>
 
         <div>
-            <label class="block font-medium mb-1">Slash Image</label>
+            <label class="block font-medium mb-1">Slash ImageWidth (400px)	Height (400px) গুরুত্বপূর্ণ * </label>
             <input type="file" wire:model="slash_image" class="input">
             @if (is_object($slash_image) && method_exists($slash_image, 'temporaryUrl'))
                 <img src="{{ $slash_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover">
@@ -50,7 +50,7 @@
         
         {{-- Category Checkbox --}}
         <div>
-            <p class="block font-semibold mb-2">Categories (Select Multiple)</p>
+            <p class="block font-semibold mb-2">Categories (যে কোন তিনটি) ( গুরুত্বপূর্ণ * )</p>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
                 @php
                     $categoryOptions = [
@@ -134,20 +134,27 @@
 
         <!-- Prices -->
         <div>
-            <label class="block font-medium mb-1">Real Price</label>
+            <label class="block font-medium mb-1">Real Price ( গুরুত্বপূর্ণ * ) </label>
             <input type="number" wire:model.defer="real_price" class="input" step="0.01">
             @error('real_price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
         <div>
-            <label class="block font-medium mb-1">Offer Price</label>
+            <label class="block font-medium mb-1">Offer Price ( গুরুত্বপূর্ণ * ) </label>
             <input type="number" wire:model.defer="offer_price" class="input" step="0.01">
             @error('offer_price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+        </div>
+        
+        <!-- Stock Quantity -->
+         <div>
+            <label class="block font-medium mb-1">Stock Quantity ( গুরুত্বপূর্ণ * )</label>
+            <input type="text" wire:model.defer="stock_quantity" class="input">
+            @error($stock_quantity) <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
         <!-- Additional Fields -->
         @foreach ([
             'sku' => 'SKU', 'brand' => 'Brand', 'discount_percent' => 'Discount %',
-            'stock_quantity' => 'Stock Quantity', 'weight' => 'Weight (kg)',
+            'weight' => 'Weight (kg)',
             'dimensions' => 'Dimensions (LxWxH)', 'rating' => 'Rating',
             'quality' => 'Quality', 'warranty' => 'Warranty', 'shipping_info' => 'Shipping Info'
         ] as $field => $label)
