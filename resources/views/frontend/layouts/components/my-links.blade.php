@@ -1,10 +1,10 @@
 {{-- Favicon Icon  --}}
-<link rel="icon" type="image/png" href="/frontend/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/frontend/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/frontend/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/frontend/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" href="{{ asset('frontend/favicon/favicon-96x96.png') }}" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="{{ asset('frontend/favicon/favicon.svg') }}" />
+<link rel="shortcut icon" href="{{ asset('/frontend/favicon/favicon.ico') }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/frontend/favicon/apple-touch-icon.png') }}" />
 <meta name="apple-mobile-web-app-title" content="Live Shope" />
-<link rel="manifest" href="/frontend/favicon/site.webmanifest" />
+<link rel="manifest" href="{{ asset('/frontend/favicon/site.webmanifest') }}" />
 <!-- Font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Fonts -->

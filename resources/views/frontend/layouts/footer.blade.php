@@ -39,9 +39,9 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <ul class="space-y-2 text-sm text-gray-400">
-                    <li><span class="font-medium text-white">Email:</span> info@onelife.com</li>
-                    <li><span class="font-medium text-white">Phone:</span> +880 123 456 789</li>
-                    <li><span class="font-medium text-white">Address:</span> Dhaka, Bangladesh</li>
+                    <li><span class="font-medium text-white">Email:</span> mslabdulazim2025@gmail.com</li>
+                    <li><span class="font-medium text-white">Phone:</span> +880 1403022986</li>
+                    <li><span class="font-medium text-white">Address:</span> Demra Dhaka-1361, Bangladesh</li>
                 </ul>
             </div>
         </div>

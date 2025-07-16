@@ -1,5 +1,5 @@
 <!-- Wrapper -->
-<div class="w-full bg-green-900 overflow-x-hidden">
+<div class="w-full bg-gray-900 overflow-x-hidden">
     <hr class="border-t border-white">
 
     <!-- Navbar Section -->

@@ -38,7 +38,7 @@
                   <livewire:add-to-cart 
                             :productId="$rightSlideItem->id" 
                             :key="$rightSlideItem->id" 
-                            buttonClass="text-sm bg-blue-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
+                            buttonClass="text-sm bg-blue-500 text-white p-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
                         />
                 </div>
               </div>

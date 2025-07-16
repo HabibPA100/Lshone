@@ -6,7 +6,8 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Str;
+use Carbon\Carbon;
 class NewProductCreate extends Component
 {
     use WithFileUploads;
@@ -66,8 +67,20 @@ class NewProductCreate extends Component
     {
         $this->validate();
 
-        $productImagePath = $this->product_image ? $this->product_image->store('products', 'public') : null;
-        $slashImagePath = $this->slash_image ? $this->slash_image->store('slashes', 'public') : null;
+        $timestamp = now()->format('Ymd_His');
+        $random = Str::random(5);
+
+        $productImagePath = null;
+        if ($this->product_image) {
+            $productImageName = 'product_' . $timestamp . '_' . $random . '.' . $this->product_image->getClientOriginalExtension();
+            $productImagePath = $this->product_image->storeAs('products', $productImageName, 'public');
+        }
+
+        $slashImagePath = null;
+        if ($this->slash_image) {
+            $slashImageName = 'slash_' . $timestamp . '_' . $random . '.' . $this->slash_image->getClientOriginalExtension();
+            $slashImagePath = $this->slash_image->storeAs('slashes', $slashImageName, 'public');
+        }
 
         $product = Product::updateOrCreate(
             ['id' => $this->productId],
@@ -99,6 +112,7 @@ class NewProductCreate extends Component
                 'quality' => $this->quality,
             ]
         );
+
         $this->dispatch('swal:success', data: [
             'title' => $this->title,
             'text' => 'আপনি সফলভাবে একটি পণ্য যুক্ত করেছেন ! ধন্যবাদ '
