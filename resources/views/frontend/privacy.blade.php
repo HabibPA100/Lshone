@@ -1,78 +1,100 @@
 @extends('frontend.layouts.master')
-@section('title', 'Privacy Policy')
+
+@section('title', 'গোপনীয়তা নীতিমালা')
+
 @section('content')
-<div class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold mb-6 text-center">গোপনীয়তা নীতি</h1>
-    
-    <p class="mb-6 text-justify">
-        <strong>Live Shope</strong> ই-কমার্স ওয়েবসাইটে আপনাকে স্বাগতম। আপনার গোপনীয়তা আমাদের কাছে অগ্রাধিকারপ্রাপ্ত বিষয়। আমরা প্রতিশ্রুতিবদ্ধ আপনার ব্যক্তিগত তথ্য সুরক্ষিত রাখার এবং সেই তথ্যের ব্যবহারে স্বচ্ছতা বজায় রাখার। এই নীতিমালাটি আপনার তথ্য কীভাবে সংগ্রহ, ব্যবহার, সংরক্ষণ এবং সুরক্ষিত করা হয় তা ব্যাখ্যা করে।
-    </p>
+    <div class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">১. আমরা কী ধরনের তথ্য সংগ্রহ করি</h2>
-    <p class="mb-4 text-justify">
-        আপনি যখন আমাদের ওয়েবসাইটে অ্যাকাউন্ট তৈরি করেন, পণ্য অর্ডার করেন অথবা আমাদের সার্ভিস ব্যবহার করেন, তখন আমরা নিম্নলিখিত তথ্য সংগ্রহ করতে পারি:
-    </p>
-    <ul class="list-disc list-inside mb-6 ml-4">
-        <li>আপনার পুরো নাম ও যোগাযোগের ঠিকানা</li>
-        <li>মোবাইল নম্বর ও ইমেইল</li>
-        <li>ডেলিভারির জন্য প্রয়োজনীয় ঠিকানা</li>
-        <li>লেনদেন সংক্রান্ত তথ্য (যেমনঃ বিকাশ/নগদ/কার্ডের মাধ্যমে পেমেন্ট)</li>
-        <li>আপনার পছন্দ, ফিডব্যাক এবং ব্রাউজিং হিস্টোরি</li>
-    </ul>
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-white mb-4">গোপনীয়তা নীতিমালা</h1>
+                <p class="text-lg text-gray-600">Live Shope আপনার ব্যক্তিগত তথ্যের নিরাপত্তা নিশ্চিত করতে দৃঢ়প্রতিজ্ঞ। নিচে আমাদের ৯টি গোপনীয়তা নীতিমালা তুলে ধরা হলো।</p>
+            </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">২. তথ্য সংগ্রহের উদ্দেশ্য</h2>
-    <p class="mb-4 text-justify">
-        <strong>Live Shope</strong> নিচের উদ্দেশ্যে আপনার তথ্য ব্যবহার করে:
-    </p>
-    <ul class="list-disc list-inside mb-6 ml-4">
-        <li>আপনার অর্ডার প্রক্রিয়াকরণ ও ডেলিভারি নিশ্চিত করা</li>
-        <li>আপনার প্রোফাইল তৈরি ও সংরক্ষণ করা</li>
-        <li>আমাদের গ্রাহক সেবা উন্নত করা</li>
-        <li>আপনার কাছে প্রাসঙ্গিক অফার, ডিসকাউন্ট ও নতুন প্রোডাক্ট জানানো</li>
-        <li>সাইটের সিকিউরিটি বজায় রাখা ও মিথ্যা বা প্রতারণামূলক কার্যকলাপ শনাক্ত করা</li>
-    </ul>
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৩. কুকিজ ও ট্র্যাকিং</h2>
-    <p class="mb-6 text-justify">
-        আমরা কুকিজ এবং ট্র্যাকিং টেকনোলজি ব্যবহার করি আপনার ব্রাউজিং অভিজ্ঞতা উন্নত করার জন্য। এই কুকিজ আপনার আগের পছন্দ সংরক্ষণ করে এবং আপনাকে ব্যক্তিগতকৃত কনটেন্ট দেখাতে সহায়তা করে।
-    </p>
+                <!-- Card 1 -->
+                <div class="bg-blue-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-blue-800 mb-2">১. তথ্য সংগ্রহ</h2>
+                    <p class="text-gray-800">
+                        আমরা আপনার নাম, মোবাইল নম্বর, ইমেইল এবং ঠিকানাসহ প্রয়োজনীয় তথ্য সংগ্রহ করি যখন আপনি অ্যাকাউন্ট তৈরি বা অর্ডার দেন।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৪. তৃতীয় পক্ষের সাথে তথ্য শেয়ার</h2>
-    <p class="mb-6 text-justify">
-        আমরা আপনার ব্যক্তিগত তথ্য বিক্রি করি না বা কোনো তৃতীয় পক্ষের কাছে হস্তান্তর করি না, তবে আমাদের পার্টনার ডেলিভারি সার্ভিস বা পেমেন্ট গেটওয়ে-র সাথে নির্দিষ্ট তথ্য ভাগ করা হতে পারে শুধুমাত্র আপনার অর্ডার প্রসেসিংয়ের জন্য।
-    </p>
+                <!-- Card 2 -->
+                <div class="bg-green-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-green-800 mb-2">২. ব্যবহারের উদ্দেশ্য</h2>
+                    <p class="text-gray-800">
+                        আপনার তথ্য আমাদের সেবা উন্নয়ন, অর্ডার নিশ্চিতকরণ, এবং গ্রাহক সহায়তার জন্য ব্যবহার করা হয়।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৫. নিরাপত্তা ব্যবস্থা</h2>
-    <p class="mb-6 text-justify">
-        আমরা আপনার তথ্য নিরাপদ রাখতে SSL এনক্রিপশন, সার্ভার ফায়ারওয়াল, 2FA সহ নিরাপত্তা টেকনোলজি ব্যবহার করি। তবুও, অনলাইন লেনদেনে শতভাগ নিরাপত্তা কেউ গ্যারান্টি দিতে পারে না—আপনিও আপনার পাসওয়ার্ড ও তথ্য নিরাপদ রাখবেন।
-    </p>
+                <!-- Card 3 -->
+                <div class="bg-yellow-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-yellow-800 mb-2">৩. কুকিজ নীতি</h2>
+                    <p class="text-gray-800">
+                        আপনার ব্রাউজিং অভিজ্ঞতা উন্নত করতে আমরা কুকিজ ও ট্র্যাকিং প্রযুক্তি ব্যবহার করি।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৬. আপনার অধিকার</h2>
-    <p class="mb-6 text-justify">
-        আপনি যেকোনো সময় আপনার তথ্য দেখতে, সংশোধন করতে অথবা মুছে ফেলতে পারেন। আপনি চাইলে আমাদের ইমেইলের মাধ্যমে সেই অনুরোধ জানাতে পারেন এবং আমরা ৭ কার্যদিবসের মধ্যে তা প্রক্রিয়া করবো।
-    </p>
+                <!-- Card 4 -->
+                <div class="bg-pink-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-pink-800 mb-2">৪. তৃতীয় পক্ষের তথ্য শেয়ার</h2>
+                    <p class="text-gray-800">
+                        আমরা আপনার তথ্য তৃতীয় পক্ষের কাছে বিক্রি করি না, তবে সেবা দিতে প্রয়োজনে বিশ্বস্ত পার্টনারদের সঙ্গে শেয়ার করতে পারি।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৭. শিশুদের গোপনীয়তা</h2>
-    <p class="mb-6 text-justify">
-        আমাদের ওয়েবসাইট ১৮ বছরের কম বয়সীদের জন্য নয়। যদি কোন শিশু আমাদের ওয়েবসাইটে অ্যাকাউন্ট করে, আমরা দ্রুত সেই অ্যাকাউন্ট বাতিল করবো এবং প্রয়োজনে অভিভাবকের সাথে যোগাযোগ করবো।
-    </p>
+                <!-- Card 5 -->
+                <div class="bg-purple-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-purple-800 mb-2">৫. তথ্য নিরাপত্তা</h2>
+                    <p class="text-gray-800">
+                        আপনার তথ্য এনক্রিপশন ও সুরক্ষিত সার্ভারে সংরক্ষিত থাকে। আমাদের সিস্টেম সর্বোচ্চ নিরাপত্তা বজায় রাখে।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৮. গোপনীয়তা নীতির হালনাগাদ</h2>
-    <p class="mb-6 text-justify">
-        আমরা সময়ে সময়ে এই গোপনীয়তা নীতিমালার হালনাগাদ করতে পারি। কোন পরিবর্তন হলে, আমরা ওয়েবসাইটে তা প্রকাশ করবো এবং প্রয়োজনে আপনাকে ইমেইলের মাধ্যমে জানাবো।
-    </p>
+                <!-- Card 6 -->
+                <div class="bg-red-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-red-800 mb-2">৬. ব্যবহারকারীর অধিকার</h2>
+                    <p class="text-gray-800">
+                        আপনি যেকোনো সময় আপনার তথ্য দেখতে, পরিবর্তন করতে বা মুছে ফেলতে পারেন। এছাড়াও অপ্ট-আউট করার সুযোগ রয়েছে।
+                    </p>
+                </div>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">৯. আমাদের সাথে যোগাযোগ</h2>
-    <p class="mb-6 text-justify">
-        যদি আপনার এই গোপনীয়তা নীতি নিয়ে কোন প্রশ্ন, মতামত অথবা অভিযোগ থাকে, অনুগ্রহ করে আমাদের নিম্নলিখিত ঠিকানায় যোগাযোগ করুন:
-    </p>
+                <!-- Card 7 -->
+                <div class="bg-teal-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-teal-800 mb-2">৭. শিশুদের গোপনীয়তা</h2>
+                    <p class="text-gray-800">
+                        ১৩ বছরের কম বয়সী কারো কাছ থেকে আমরা ইচ্ছাকৃতভাবে কোনো তথ্য সংগ্রহ করি না এবং আমাদের সেবা তাদের জন্য নয়।
+                    </p>
+                </div>
 
-    <div class="bg-gray-100 p-4 rounded mb-6">
-        <p><strong>ইমেইল:</strong> support@onelife.com</p>
-        <p><strong>ফোন:</strong> ০১XXXXXXXXX</p>
-        <p><strong>অফিস:</strong> ধানমন্ডি, ঢাকা, বাংলাদেশ</p>
+                <!-- Card 8 -->
+                <div class="bg-indigo-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-indigo-800 mb-2">৮. নীতিমালার পরিবর্তন</h2>
+                    <p class="text-gray-800">
+                        সময়ের সাথে সাথে আমাদের গোপনীয়তা নীতিমালায় পরিবর্তন হতে পারে, যা ওয়েবসাইটে আপডেট করা হবে।
+                    </p>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-orange-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h2 class="text-xl font-bold text-orange-800 mb-2">৯. যোগাযোগ করুন</h2>
+                    <p class="text-gray-800">
+                        কোনো প্রশ্ন থাকলে ইমেইল করুন <a href="mailto:support@liveshope.com" class="underline text-orange-700">support@liveshope.com</a> অথবা <a href="{{ route('contact') }}" class="underline text-orange-700">যোগাযোগ পেজ</a> ভিজিট করুন।
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 text-center">
+                <a href="{{ url('/') }}" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                    হোম পেজে ফিরে যান
+                </a>
+            </div>
+
+        </div>
     </div>
-
-    <p class="text-sm text-gray-500 text-right">সর্বশেষ আপডেট: {{ date('d M, Y') }}</p>
-</div>
 @endsection

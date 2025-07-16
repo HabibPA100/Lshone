@@ -3,94 +3,106 @@
 @section('title', 'Our Services')
 
 @section('content')
-<section class="max-w-6xl mx-auto px-6 py-16 text-gray-800">
-    <h1 class="text-5xl font-extrabold mb-8 text-center">Our Services</h1>
-    
-    <p class="mb-8 text-lg leading-relaxed">
-        <span class="font-semibold">Live Shope</span> হলো আপনার একমাত্র গন্তব্য যেখানে আপনি পাবেন সব ধরনের প্রয়োজনীয় সেবা এবং পণ্য। আমরা একটি আধুনিক ইকমার্স প্ল্যাটফর্ম যেটা ডিজাইন করা হয়েছে বাংলাদেশের মানুষের জীবনযাত্রা সহজ করার জন্য। আমাদের লক্ষ্য হলো অন্ন, বস্ত্র, বাসস্থান সহ জীবনের বিভিন্ন প্রয়োজনীয়তা এক জায়গায় সহজে এবং দ্রুত সরবরাহ করা। চলুন দেখে নিই আমাদের প্রধান প্রধান সার্ভিস গুলো—
-    </p>
+    <div class="bg-white py-16 text-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">১. অন্ন ও খাদ্যসামগ্রী</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            খাদ্য আমাদের জীবনের অন্যতম অপরিহার্য অংশ। <span class="font-semibold">Live Shope</span> এ আমরা নিশ্চিত করি আপনার পরিবারের জন্য সেরা গুণগত মানের খাদ্যসামগ্রী সহজলভ্য হয়। দেশজুড়ে বিভিন্ন রকম চাল, ডাল, তেল, মসলা, শাকসবজি এবং প্রক্রিয়াজাত খাদ্য সরবরাহ করি। 
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            আমরা সরবরাহ করি সঠিক দামে এবং স্বচ্ছভাবে, যাতে আপনি যেকোনো সময় আপনার দরকারি খাদ্য সামগ্রী অর্ডার করে বাড়িতে পৌঁছে নিতে পারেন। বিশেষ করে গ্রামীণ ও প্রত্যন্ত অঞ্চলের গ্রাহকদের জন্য দ্রুত ডেলিভারি ব্যবস্থা করা হয়েছে, যাতে খাদ্যের স্বাদ ও গুণগত মান অক্ষুণ্ণ থাকে।
-        </p>
-    </article>
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-4">আমাদের সেবা</h1>
+                <p class="text-lg text-gray-600">
+                    Live Shope-এ আমরা বিশ্বাস করি, অনলাইন কেনাকাটা হতে হবে সহজ, নিরাপদ এবং সবার জন্য। আমাদের সেবাগুলো এমনভাবে তৈরি করা হয়েছে, যাতে আপনি ঘরে বসেই এক ক্লিকে পছন্দের পণ্য কিনতে এবং বিক্রি করতে পারেন।
+                </p>
+            </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">২. বস্ত্র ও ফ্যাশন</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            ফ্যাশন ও আরাম একসঙ্গে পাওয়া যায় না এমন ধারণা ভুলে যান। Live Shope প্ল্যাটফর্মে রয়েছে পুরুষ, নারী ও শিশুর জন্য সব ধরনের বস্ত্র ও ফ্যাশন সামগ্রী। আমরা নিয়ে আসি দেশি-বিদেশি ব্র্যান্ডের মানসম্মত পোশাক, যা আপনাকে দিবে আভিজাত্যের ছোঁয়া।
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            আমাদের কালেকশনে আছে অফিসিয়াল ও ক্যাজুয়াল পোশাক, পাঞ্জাবি, শাড়ি, লেহেঙ্গা, টি-শার্ট, জিন্সসহ আরও অনেক কিছু। প্রতিটি পণ্যের বিস্তারিত বর্ণনা ও সাইজ গাইডলাইন দেওয়া থাকে, যাতে আপনি অনলাইনে বসেই সঠিক পণ্য নির্বাচন করতে পারেন। 
-        </p>
-    </article>
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">সহজ প্রোডাক্ট আপলোড</h2>
+                    <p class="text-gray-700">
+                        বিক্রেতারা খুব সহজে ছবি ও বিবরণসহ প্রোডাক্ট তালিকাভুক্ত করতে পারেন। কোনো প্রযুক্তিগত জ্ঞানের দরকার নেই।
+                    </p>
+                </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">৩. বাসস্থান ও গৃহস্থালি সেবা</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            বাসস্থান মানুষের শান্তি ও নিরাপত্তার কেন্দ্র। Live Shope এ আমরা শুধু ঘরবাড়ি বিক্রি বা ভাড়া দিই না, বরং বাসস্থানের সাথে সংশ্লিষ্ট বিভিন্ন গৃহস্থালি সেবাও প্রদান করি। 
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            এর মধ্যে আছে বাড়ির মেরামত, পেইন্টিং, স্যানিটারি, ইলেকট্রিক্যাল সার্ভিস, হোম ডেকোরেশন আইটেম এবং গৃহপরিচারিকা সেবা। আমরা চেষ্টা করি প্রতিটি গ্রাহকের বাসস্থানে সম্পূর্ণ সমাধান দিতে যাতে তারা তাদের জীবন আরো আরামদায়ক ও নিরাপদ করতে পারেন।
-        </p>
-    </article>
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">নিরাপদ পেমেন্ট</h2>
+                    <p class="text-gray-700">
+                        আমাদের গেটওয়ে বিকাশ, নগদ, ব্যাংক কার্ডসহ সব পেমেন্ট মাধ্যম সাপোর্ট করে। প্রতিটি লেনদেন এনক্রিপটেড ও নিরাপদ। তবে এখন শুধু ক্যাশ অন ডেলিভারি শুবিধা পাবেন। 
+                    </p>
+                </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">৪. স্বাস্থ্য ও ওষুধ সরবরাহ</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            স্বাস্থ্যই জীবনের সবচেয়ে বড় সম্পদ। Live Shope প্ল্যাটফর্মে রয়েছে প্রাথমিক স্বাস্থ্যসেবা এবং বিশ্বস্ত ওষুধ সরবরাহের ব্যবস্থা। 
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            গ্রাহকরা অনলাইনে সহজে ওষুধ অর্ডার করতে পারেন এবং প্রয়োজনীয় স্বাস্থ্য সামগ্রী পেয়ে যান দ্রুত। এছাড়াও, আমরা চিকিৎসকদের সাথে সরাসরি যোগাযোগের ব্যবস্থা করছি যাতে জরুরি অবস্থায় প্রয়োজনীয় পরামর্শ ও সেবা পাওয়া যায়।
-        </p>
-    </article>
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">দ্রুত ডেলিভারি সেবা</h2>
+                    <p class="text-gray-700">
+                        দেশব্যাপী কুরিয়ার পার্টনারদের মাধ্যমে দ্রুত এবং নির্ভরযোগ্য ডেলিভারি সুবিধা রয়েছে, ট্র্যাকিংসহ।
+                    </p>
+                </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">৫. ইলেকট্রনিক্স ও গ্যাজেটস</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            আধুনিক জীবনের অবিচ্ছেদ্য অংশ হলো ইলেকট্রনিক ডিভাইস। Live Shope এ আপনি পাবেন মোবাইল ফোন, ল্যাপটপ, ট্যাবলেট, হেডফোন, স্মার্ট ওয়াচ সহ নানা ধরনের গ্যাজেট। 
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            প্রতিটি পণ্যই যাচাই-বাছাই করা ও ব্র্যান্ডেড, তাই আপনি নিশ্চিত থাকতে পারেন ভালো মানের পণ্য পাচ্ছেন। আমরা নিয়মিত নতুন অফার এবং কুপন দিয়ে থাকি যাতে আপনি সাশ্রয়ী দামে আধুনিক প্রযুক্তি পেতে পারেন।
-        </p>
-    </article>
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">২৪/৭ কাস্টমার সাপোর্ট</h2>
+                    <p class="text-gray-700">
+                        আমাদের হেল্পডেস্ক এবং লাইভ চ্যাট টিম যেকোনো সময় আপনার সমস্যার সমাধানে প্রস্তুত।</p>
+                </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">৬. শিক্ষা ও কোচিং সেবা</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            শিক্ষা মানুষের জীবনের আলো। Live Shope এর মাধ্যমে আপনি অনলাইন টিউটোরিয়াল, কোচিং ক্লাস, ও শিক্ষামূলক সামগ্রী পেতে পারেন। আমাদের প্ল্যাটফর্মে রয়েছে বিভিন্ন শ্রেণির শিক্ষার্থী এবং প্রফেশনালদের জন্য কোর্স, লাইভ ক্লাস ও রেকর্ডেড সেশন।
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            এছাড়াও, আমরা প্রশিক্ষণ এবং দক্ষতা উন্নয়ন সেবাও প্রদান করি যা আপনাকে কর্মজীবনে এগিয়ে যেতে সাহায্য করবে। 
-        </p>
-    </article>
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">বিক্রেতাদের জন্য প্রশিক্ষণ</h2>
+                    <p class="text-gray-700">
+                        নতুন বিক্রেতাদের জন্য রয়েছে গাইডলাইন, ভিডিও টিউটোরিয়াল এবং সরাসরি পরামর্শ সেবা।
+                    </p>
+                </div>
 
-    <article class="mb-12">
-        <h2 class="text-3xl font-bold mb-4 text-green-700">৭. হোম ডেলিভারি ও লজিস্টিক সেবা</h2>
-        <p class="mb-4 text-md leading-relaxed">
-            কেনাকাটা শেষে ডেলিভারি সবচেয়ে গুরুত্বপূর্ণ। Live Shope এ আমরা দেশের যেকোনো প্রান্তে দ্রুত এবং নিরাপদ ডেলিভারি সেবা নিশ্চিত করি। আপনার অর্ডার যত দ্রুত সম্ভব আপনার ঘরে পৌঁছে যাবে, তাতে কোনো ঝামেলা বা বিলম্ব থাকবে না।
-        </p>
-        <p class="mb-4 text-md leading-relaxed">
-            এছাড়া, আমরা এক্সপ্রেস ডেলিভারি, কুরিয়ার সেবা এবং ট্র্যাকিং সুবিধাও প্রদান করি যাতে আপনি অর্ডারের আপডেট realtime পেতে পারেন।
-        </p>
-    </article>
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">রিটার্ন এবং রিফান্ড</h2>
+                    <p class="text-gray-700">
+                        পণ্য ত্রুটিপূর্ণ হলে নির্ধারিত সময়ের মধ্যে রিটার্ন ও রিফান্ডের সহজ ও স্বচ্ছ প্রক্রিয়া রয়েছে।
+                    </p>
+                </div>
 
-    <article>
-        <h2 class="text-3xl font-bold mb-4 text-green-700">আমাদের মূল লক্ষ্য</h2>
-        <p class="mb-6 text-md leading-relaxed">
-            আমাদের লক্ষ্য শুধু পণ্য বিক্রি করা নয়, বরং আপনার জীবনের প্রতিটি ক্ষেত্রে সহযোগী হওয়া। Live Shope বিশ্বাস করে — “একটাই জীবন, তাই সেবা হওয়া উচিত একটাই জায়গায়।” আপনার জীবনের যেকোনো প্রয়োজন আমাদের সাইটেই খুঁজে পাবেন আপনি, সহজ, নিরাপদ ও বিশ্বাসযোগ্য ভাবে।
-        </p>
-        <p class="mb-6 text-md leading-relaxed">
-            আমরা আমাদের গ্রাহকদের সর্বোচ্চ সন্তুষ্টি দিতে প্রতিজ্ঞাবদ্ধ এবং এজন্য আমরা সর্বদা কাজ করে যাচ্ছি নতুন নতুন সেবা এবং উন্নত প্রযুক্তি নিয়ে। 
-        </p>
-        <p class="mb-6 text-md leading-relaxed font-semibold text-green-700">
-            Live Shope - আপনার জীবনকে সহজ, সুন্দর এবং সুরক্ষিত করার একমাত্র ঠিকানা।
-        </p>
-    </article>
-</section>
+                <!-- Service 7 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">বাল্ক অর্ডার ও B2B</h2>
+                    <p class="text-gray-700">
+                        বড় পরিমাণে পণ্য অর্ডারের জন্য কর্পোরেট ও পাইকারি ক্রেতাদের জন্য রয়েছে আলাদা সুবিধা।
+                    </p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">মার্কেটিং সাপোর্ট</h2>
+                    <p class="text-gray-700">
+                        আপনার প্রোডাক্ট প্রচারের জন্য আমরা SEO, ফেসবুক অ্যাডস, ইমেইল ক্যাম্পেইন ইত্যাদি সাহায্য করি।
+                    </p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-2">মোবাইল অ্যাপ</h2>
+                    <p class="text-gray-700">
+                        আমাদের অ্যাপ দিয়ে আপনি যে কোনো সময় পণ্য ব্রাউজ, অর্ডার ও ট্র্যাক করতে পারবেন Android ও iOS-এ।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="mt-20 text-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">কেন Live Shope বেছে নেবেন?</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    আমরা শুধু সেবা দিই না, আপনাকে সহযোগিতা করি ব্যবসা গড়তে। আপনার প্রয়োজনের কথা ভেবেই প্রতিটি ফিচার ডিজাইন করা হয়েছে। দ্রুত ডেলিভারি, সাপোর্ট, ট্রেইনিং, এবং নিরাপদ পেমেন্ট—সব একসাথে Live Shope-এ।
+                </p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-12 text-center">
+                <a href="{{ route('contact') }}" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
+                    এখনই যোগাযোগ করুন
+                </a>
+            </div>
+        </div>
+    </div>
 @endsection

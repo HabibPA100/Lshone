@@ -52,10 +52,9 @@
     {{-- ঠিকানা ও যোগাযোগ তথ্য --}}
     <div class="max-w-4xl mx-auto mt-12 text-center text-gray-600">
         <h2 class="text-2xl font-bold text-green-700 mb-4">আমাদের ঠিকানা</h2>
-        <p class="mb-1"><strong>ঠিকানা:</strong> গুলশান-১, ঢাকা-১২১২, বাংলাদেশ</p>
-        <p class="mb-1"><strong>ইমেইল:</strong> support@onelife.com</p>
-        <p class="mb-1"><strong>ফোন:</strong> +880 1234 567 890</p>
-        <p><strong>সময়:</strong> প্রতিদিন সকাল ৯টা থেকে রাত ৯টা পর্যন্ত</p>
+        <p class="mb-1"><strong>ঠিকানা:</strong> ডেমরা স্টাফ কোয়ার্টার, সারুলিয়া, ঢাকা-১৩৬১, বাংলাদেশ</p>
+        <p class="mb-1"><strong>ইমেইল:</strong> mslabdulazim2025@gmail.com</p>
+        <p class="mb-1"><strong>ফোন:</strong> +880 1403022986</p>
     </div>
 
     {{-- লোকেশন ম্যাপ --}}

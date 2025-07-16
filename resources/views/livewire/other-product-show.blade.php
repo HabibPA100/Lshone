@@ -48,14 +48,14 @@
                         {{-- Buttons --}}
                         <div class="mt-4 flex justify-between items-center">
                             <a href="{{ route('cart.details', $other->id) }}" 
-                            class="text-sm bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 transition">
+                            class="text-sm bg-gray-200 text-gray-800 p-2 rounded hover:bg-gray-300 transition">
                                 View
                             </a>
 
                             <livewire:add-to-cart 
                                 :productId="$other->id" 
                                 :key="$other->id" 
-                                buttonClass="text-sm bg-blue-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
+                                buttonClass="text-sm bg-blue-500 text-white p-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
                             />
                         </div>
                     </div>
