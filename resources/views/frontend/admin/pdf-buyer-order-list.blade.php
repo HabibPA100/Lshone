@@ -8,8 +8,12 @@
             size: A4;
             margin: 40px;
         }
+       @font-face {
+            font-family: 'BanglaFont';
+            src: url('file://{{ public_path('fonts/SolaimanLipi.ttf') }}') format('truetype');
+        }
         body {
-            font-family: 'DejaVu Sans', sans-serif;
+            font-family: 'BanglaFont', sans-serif;
             font-size: 13px;
             color: #111;
         }

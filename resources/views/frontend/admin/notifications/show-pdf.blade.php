@@ -7,8 +7,13 @@
         $qrcodesPath = public_path('storage/qrcodes/' . $data['unique_order_id'] . '.png');
     @endphp
     <style>
+        @font-face {
+            font-family: 'BanglaFont';
+            src: url('file://{{ public_path('fonts/SolaimanLipi.ttf') }}') format('truetype');
+        }
+
         body {
-            font-family: 'DejaVu Sans', sans-serif;
+            font-family: 'BanglaFont', sans-serif;
             font-size: 14px;
             line-height: 1.6;
         }
