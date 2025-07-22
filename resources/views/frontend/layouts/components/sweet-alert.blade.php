@@ -48,3 +48,15 @@
         });
     });
 </script>
+
+{{-- Non-Livewire session-based alert --}}
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'সফল!',
+            text: @json(session('success')),
+            confirmButtonColor: '#3085d6'
+        });
+    </script>
+@endif

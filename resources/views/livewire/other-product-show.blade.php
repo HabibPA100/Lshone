@@ -3,12 +3,12 @@
     <section class="bg-gray-100 py-8 px-4">
         <div class="max-w-7xl mx-auto">
             <a href="{{ route('cart.category', 'Others') }}">
-                <h1 class="text-3xl font-bold text-center text-white mb-8">🎁 Other Package</h1>
+                <h1 class="text-3xl font-bold text-center text-white mb-8">অন্যান্য পণ্য সমূহ দেখুন -  > </h1>
             </a>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
                 @foreach($others as $other)
-                    <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-2 relative group" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                    <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-2 relative group">
                         
                         {{-- Product Image --}}
                         <img src="{{ asset('storage/' . $other->product_image) }}" 

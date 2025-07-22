@@ -3,8 +3,9 @@
     <div class="slide-track">
       <div class="slide-flex">
         @foreach($rightSlideItems as $rightSlideItem)
-          <div class="slide-item" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+          <div class="slide-item" data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
             <div class="slide-border">
+              <a href="{{ route('cart.details', $rightSlideItem->id) }}">
               <div class="slide-content">
                 <img src="{{ asset('storage/' . $rightSlideItem->product_image) }}" class="slide-image" alt="{{ $rightSlideItem->title }}">
                 @php
@@ -28,20 +29,15 @@
                       <del>৳{{ number_format($rightSlideItem->real_price, 2) }}</del>
                     </span>
                   </p>
-                </div>
-                <div class="slide-buttons">
-                    <button class="btn-view">
-                        <a href="{{ route('cart.details', $rightSlideItem->id) }}">
-                           View
-                        </a>
-                    </button>
-                  <livewire:add-to-cart 
-                            :productId="$rightSlideItem->id" 
-                            :key="$rightSlideItem->id" 
-                            buttonClass="text-sm bg-blue-500 text-white p-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
-                        />
+                   {{-- Stock Status --}}
+                    @if($rightSlideItem->status == 'in stock')
+                        <p class="text-green-600 text-sm mb-1">✅ {{ $rightSlideItem->status }}</p>
+                    @else
+                        <p class="text-red-600 text-sm mb-1">❌ {{ $rightSlideItem->status }}</p>
+                    @endif
                 </div>
               </div>
+              </a>
             </div>
           </div>
         @endforeach

@@ -27,9 +27,7 @@ class CartViewController extends Controller
         $related = $query->latest()->take(6)->get();
 
         // Right slider item (Gift ক্যাটাগরি ধরে)
-        $rightSlideItems = Product::whereJsonContains('category', 'Gift')
-            ->latest()
-            ->get();
+        $rightSlideItems = Product::latest()->get();
 
         return view('frontend.single-cart-view', compact('card', 'related', 'rightSlideItems'));
     }

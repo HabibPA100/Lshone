@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AboutUsController;
 use App\Livewire\Cart;
 use App\Livewire\CardView;
 use App\Livewire\CartPage;
@@ -11,22 +10,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Buyer\BuyerDashboard;
 use App\Livewire\Seller\SellerDashboard;
+use App\Http\Controllers\TermsController;
 use App\Livewire\Buyer\BuyerRegistration;
 use App\Http\Controllers\LogOutController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GetCartController;
+use App\Http\Controllers\PrivacyController;
+use App\Http\Controllers\ServiceController;
 use App\Livewire\Seller\SellerRegistration;
 use App\Http\Controllers\AllClothController;
 use App\Http\Controllers\CartViewController;
+use App\Http\Controllers\CommissionController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AllProductShowController;
 use App\Http\Controllers\BuyerDashboardController;
 use App\Http\Controllers\SellerDashboardController;
 use App\Http\Controllers\Seller\NotificationController;
 use App\Http\Controllers\Seller\ShowOrderListController;
 use App\Http\Controllers\Buyer\BuyerNotificationController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PrivacyController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TermsController;
 
 Route::get('/create-product', function(){
     return view('frontend.admin.products.new-product');
@@ -58,6 +60,9 @@ Route::middleware('auth:buyer')->prefix('buyer')->group(function () {
 Route::middleware('auth:seller')->prefix('seller')->group(function () {
 
     Route::get('/dashboard', [SellerDashboardController::class, 'dashboard'])->name('seller.dashboard');
+    Route::get('/commission', [ CommissionController::class, 'commission'])->name('commission');
+    
+    Route::post('/subscription', [SubscriptionController::class, 'store'])->name('subscription.store');
     
     Route::get('/create-new-product', function () {
         $user = Auth::user();

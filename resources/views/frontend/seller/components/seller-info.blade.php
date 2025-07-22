@@ -13,7 +13,7 @@
             <a href="{{ route('seller.dashboard') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🏠 Dashboard</a>
             <a href="{{ route('create.product') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">📦 My Products</a>
             <a href="{{ route('show.order.list') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🛒 Orders</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Messages</a>
+            <a href="{{ route('commission') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Commissions</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⚙️ Settings</a>
             <button wire:click="logout" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition w-full">
                 Logout
@@ -78,7 +78,7 @@
                             <tr class="border-b">
                                 <td class="p-2">#{{ $order->unique_order_id }}</td>
                                 <td class="p-2">{{ $order->name }}</td>
-                                <td class="p-2">৳{{ number_format($order->total, 2) }}</td>
+                                <td class="p-2">৳{{ number_format($order->total - $order->delivery_charge, 2) }}</td>
                                 <td class="p-2 text-yellow-600 capitalize">{{ $order->status ?? 'Pending' }}</td>
                             </tr>
                         @endif

@@ -9,7 +9,7 @@
 <!-- Social Media Meta Tags (Open Graph for Facebook, LinkedIn, etc.) -->
 <meta property="og:title" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম">
 <meta property="og:description" content="নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি। এখনই শপ করুন Live Shope-এ।">
-<meta property="og:image" content="URL_TO_YOUR_LOGO_OR_FEATURE_IMAGE">
+<meta property="og:image" content="{{ asset('frontend/favicon/favicon.svg') }}">
 <meta property="og:url" content="https://liveshope.xyz/">
 <meta property="og:type" content="website">
 
@@ -21,7 +21,6 @@
 
 <!-- Title -->
 <title>@yield('title', 'Live Shope')</title>
-
 @include('frontend.layouts.components.my-links')
 <!-- Styles / Scripts -->
 @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))

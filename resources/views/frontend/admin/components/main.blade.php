@@ -14,6 +14,8 @@
             <a href="{{ route('all.buyer.show') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium"><i class="fa-solid fa-users"></i> <span>All Buyer</span></a>
             <a href="{{ route('all.seller.show') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium"><i class="fa-solid fa-scale-balanced"></i> <span>All Seller</span></a>
             <a href="{{ route('buyer.order.list') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🛒 Orders</a>
+            <a href="{{ route('plans.index') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">♻️ Plane</a>
+            <a href="{{ route('admin.subscriptions') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🪺 Subscriptions</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Messages</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⚙️ Settings</a>
              <form method="POST" action="{{ route('logout') }}">

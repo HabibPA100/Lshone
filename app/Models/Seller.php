@@ -23,4 +23,10 @@ class Seller extends Authenticatable
         'date_of_birth',
         'status',
     ];
+
+    public function subscription()
+    {
+        return $this->hasOne(Subscription::class, 'user_id');
+    }
+
 }
