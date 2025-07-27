@@ -6,9 +6,6 @@
 
     {{-- Slider --}}
     @include('frontend.layouts.components.slider')
-    <div>
-        <h1> এই সাইট টি এখন টেস্টিং মুডে আছে সিগরই চালু হবে ইনশা-আল্লাহ </h1>
-    </div>
 
     {{-- Livewire Components --}}
     <livewire:other-product-show />
@@ -19,7 +16,7 @@
     {{-- Product List --}}
   
      <div class="max-w-7xl mx-auto px-4 py-10">
-        <h1 class="text-3xl font-bold text-center mb-8 text-indigo-700">📂 সকল ক্যাটেগরি</h1>
+        <h2 class="text-3xl font-bold text-center mb-8 text-indigo-700">📂 সকল ক্যাটেগরি</h2>
 
         <div class="bg-white shadow-xl rounded-xl p-6 space-y-3">
             <ul class="space-y-2">
