@@ -9,25 +9,22 @@ class CartViewController extends Controller
 {
     public function show($id)
     {
-        $card = Product::findOrFail($id);
+        // একক প্রোডাক্ট লোড করলাম সাথে তার ক্যাটেগরিও
+        $card = Product::with('category')->findOrFail($id);
 
-        // নিশ্চিত করলাম যে category একটি array (JSON field)
-        $categories = is_array($card->category) ? $card->category : json_decode($card->category, true);
+        // যদি প্রোডাক্টের category_id থাকে, related পণ্য খুঁজব
+        $related = collect(); // fallback empty collection
 
-        // Query: current product বাদ দিয়ে related item বের করব
-        $query = Product::query()->where('id', '!=', $card->id);
-
-        if (!empty($categories)) {
-            foreach ($categories as $cat) {
-                $query->orWhereJsonContains('category', $cat);
-            }
+        if ($card->category_id) {
+            $related = Product::where('category_id', $card->category_id)
+                              ->where('id', '!=', $card->id)
+                              ->latest()
+                              ->take(6)
+                              ->get();
         }
 
-        // সর্বোচ্চ 6টি related item
-        $related = $query->latest()->take(6)->get();
-
-        // Right slider item (Gift ক্যাটাগরি ধরে)
-        $rightSlideItems = Product::latest()->get();
+        // right side স্লাইডার পণ্য (Latest বা Gift হিসেবে ধরে)
+        $rightSlideItems = Product::latest()->take(10)->get();
 
         return view('frontend.single-cart-view', compact('card', 'related', 'rightSlideItems'));
     }

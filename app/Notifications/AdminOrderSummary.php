@@ -53,7 +53,7 @@ class AdminOrderSummary extends Notification
             'delivery_address' => $this->delivery_address,
             'delivery_area'    => $this->selectedDeliveryArea,
             'buyer'            => [
-                'name'   => $this->buyer->full_name ?? 'N/A',
+                'name'   => $this->buyer->name ?? 'N/A',
                 'email'  => $this->buyer->email ?? 'N/A',
                 'phone'  => $this->buyer->phone ?? 'N/A',
             ],

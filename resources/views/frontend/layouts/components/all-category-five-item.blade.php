@@ -7,7 +7,7 @@
                     <h2 class="text-xl font-bold text-gray-800">
                         {{ $data['name'] }}
                     </h2>
-                    <a href="{{ route('cart.category', $key) }}" class="text-sm text-blue-600 hover:underline">
+                    <a href="{{ route('products.by-category', $key) }}" class="text-sm text-blue-600 hover:underline">
                         আরও দেখুন →
                     </a>
                 </div>

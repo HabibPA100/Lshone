@@ -14,13 +14,13 @@
         <form wire:submit.prevent="register" class="space-y-5" data-aos="zoom-in" data-aos-delay="200">
             <!-- সম্পূর্ণ নাম -->
             <div>
-                <label for="full_name" class="block text-gray-700 font-medium mb-1">সম্পূর্ণ নামঃ</label>
-                <input type="text" id="full_name" name="full_name" wire:model="full_name"
+                <label for="name" class="block text-gray-700 font-medium mb-1">সম্পূর্ণ নামঃ</label>
+                <input type="text" id="name" name="name" wire:model="name"
                        placeholder="আপনার নাম লিখুন"
                        autocomplete="name"
                        required
                        class="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition shadow-sm hover:shadow-md" />
-                @error('full_name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                @error('name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
 
             <!-- ইমেইল -->

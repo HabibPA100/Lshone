@@ -2,8 +2,22 @@
 @if ($others->isNotEmpty())
     <section class="bg-gray-100 py-8 px-4">
         <div class="max-w-7xl mx-auto">
-            <a href="{{ route('cart.category', 'Others') }}">
-                <h1 class="text-3xl font-bold text-center text-white mb-8">অন্যান্য পণ্য সমূহ দেখুন -  > </h1>
+            @php
+                // যদি তুমি জানো এইটা 'panjabi' ক্যাটেগরির পণ্য
+                $category = \App\Models\Category::where('slug', 'others')->first(); // <== এই slug তুমি নিজে set করবে
+
+                $slugs = [];
+
+                while ($category) {
+                    array_unshift($slugs, $category->slug);
+                    $category = $category->parent;
+                }
+
+                $path = implode('/', $slugs);
+            @endphp
+
+            <a href="{{ route('products.by-category', $path) }}">
+                <h1 class="text-sm lg:text-3xl font-bold text-center text-white mb-8">অন্যান্য পণ্য সমূহ দেখুন </h1>
             </a>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">

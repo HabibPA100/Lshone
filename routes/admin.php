@@ -1,21 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AdminSubscriptionController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AllBuyerShowController;
 use App\Http\Controllers\Admin\AllSellerShowController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\SubscriptionPlanController;
 use App\Http\Controllers\Admin\AdminNotificationController;
+use App\Http\Controllers\Admin\AdminSubscriptionController;
 use App\Http\Controllers\Admin\BuyerOrderListPDFController;
 use App\Http\Controllers\Admin\EditProductStatusController;
-use App\Http\Controllers\Admin\SubscriptionPlanController;
 
 Route::get('/create-admin-account', [AdminDashboardController::class,'create']);
 
 
 Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/show-message', [AdminDashboardController::class, 'message'])->name('all.message');
     Route::get('/notification/details/{id}', [AdminNotificationController::class, 'show'])
                 ->name('admin.notification.details');
 
@@ -52,4 +54,5 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/subscriptions/{id}/edit', [AdminSubscriptionController::class, 'edit'])->name('admin.subscriptions.edit');
     Route::patch('/subscriptions/{id}/update', [AdminSubscriptionController::class, 'update'])->name('admin.subscriptions.update');
 
+    Route::resource('categories', CategoryController::class)->names('admin.categories');
 });

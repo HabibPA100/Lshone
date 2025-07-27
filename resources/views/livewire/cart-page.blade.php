@@ -117,6 +117,25 @@
                 <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md transition duration-300">
                     ✅ অর্ডার কনফার্ম করুন
                 </button>
+                
+                <!-- ⏳ সাবমিশন চলাকালীন ওয়েটিং বার্তা -->
+                <div 
+                    wire:loading 
+                    wire:target="placeOrder" 
+                    class="flex items-center justify-center gap-2 text-green-700 font-medium py-3"
+                >
+                    <!-- Spinner -->
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 animate-spin text-green-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">
+                            </path>
+                        </svg>
+                        <span> অর্ডারটি সাবমিট হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...</span>
+                    </span>
+                </div>
+
             </form>
 
         </div>

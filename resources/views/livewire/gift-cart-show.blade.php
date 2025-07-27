@@ -2,7 +2,20 @@
 @if ($gifts->isNotEmpty())
     <section class="bg-gray-100 py-3 px-4">
         <div class="max-w-7xl mx-auto">
-            <a href="{{ route('cart.category', 'Gift') }}">
+            @php
+                $firstProduct = $gifts->last();
+                $category = $firstProduct?->category; // null safe
+
+                $slugs = [];
+
+                while ($category) {
+                    array_unshift($slugs, $category->slug);
+                    $category = $category->parent;
+                }
+
+                $path = implode('/', $slugs);
+            @endphp
+            <a href="{{ route('products.by-category', $path) }}">
                 <h1 class="text-2xl mb-2">প্রিয় গিফট প্যাকস</h1>
             </a>
             <div class="flex flex-wrap -mx-2">

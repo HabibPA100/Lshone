@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Storage;
 use App\Notifications\AdminOrderSummary;
 use App\Notifications\SellerProductOrdered;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Notifications\OrderPlacedNotification;
+use App\Notifications\OrderPlacedNotificationToAdmin;
+use App\Notifications\OrderPlacedNotificationToSeller;
 
 class CartPage extends Component
 {
@@ -112,7 +115,7 @@ class CartPage extends Component
 
         $order = Order::create([
             'user_id'          => $buyer?->id,
-            'name'            => $buyer?->full_name,
+            'name'            => $buyer?->name,
             'phone'            => $buyer?->phone,
             'delivery_address' => $this->delivery_address,
             'order_note'       => $this->order_note,
@@ -143,7 +146,7 @@ class CartPage extends Component
             'qr_code_path' => $qrPath,
         ]);
 
-        // সেলার ও অ্যাডমিনদের নোটিফিকেশন পাঠানো (আগের মতই)
+        // সেলার ও অ্যাডমিনদের নোটিফিকেশন পাঠানো 
         $sellerCache = [];
 
         foreach ($this->cart as $item) {
@@ -157,30 +160,48 @@ class CartPage extends Component
 
             $seller = $sellerCache[$sellerId];
 
-            if ($seller) {
+            if ($seller && $seller->email) {
                 try {
                     $seller->notify(new SellerProductOrdered($item));
+
+                    // ✅ এখানেই $order ইনজেক্ট করে দাও
+                    $seller->notify(new OrderPlacedNotificationToSeller($item, $order));
                 } catch (\Exception $e) {
                     Log::error("Notification failed for seller ID $sellerId: " . $e->getMessage());
                 }
             }
         }
 
-
-       $admins = AdminUser::all();
+        $admins = AdminUser::all();
         $buyer = Auth::user();
 
-        foreach ($admins as $admin) {
-            $admin->notify(new AdminOrderSummary(
-                $this->cart,
-                $order->total,
-                $order->id,
-                $order->unique_order_id,
-                $this->delivery_address,
-                $this->selectedDeliveryArea,
-                $buyer
-            ));
-        }
+         foreach ($admins as $admin) {
+            try {
+                // Admin-কে অর্ডার সারাংশের নোটিফিকেশন পাঠানো
+                $admin->notify(new AdminOrderSummary(
+                    $this->cart,
+                    $order->total,
+                    $order->id,
+                    $order->unique_order_id,
+                    $this->delivery_address,
+                    $this->selectedDeliveryArea,
+                    $buyer
+                ));
+
+                // Admin-কে ইমেইল অর্ডার প্লেস হওয়ার মেইল পাঠানো
+                    $admin->notify(new OrderPlacedNotificationToAdmin($order));
+                } catch (\Exception $e) {
+                    Log::error("Admin notification/email failed for Admin ID {$admin->id}: " . $e->getMessage());
+                }
+            }
+
+         try {
+                if ($buyer && $buyer->email) {
+                    $buyer->notify(new OrderPlacedNotification($order));
+                }
+            } catch (\Exception $e) {
+                Log::error("Buyer email notification failed: " . $e->getMessage());
+            }
 
         // ইনপুট রিসেট
         Session::forget('cart');

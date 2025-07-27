@@ -12,10 +12,10 @@ class BuyerRegistration extends Component
 {
     use WithFileUploads;
 
-    public $full_name, $email, $password, $password_confirmation, $phone, $address, $profile_image, $terms;
+    public $name, $email, $password, $password_confirmation, $phone, $address, $profile_image, $terms;
 
     protected $rules = [
-        'full_name' => 'required|string|max:255',
+        'name' => 'required|string|max:255',
         'email' => 'required|email|unique:buyers,email',
         'password' => 'required|confirmed|min:8',
         'phone' => 'required|string|min:10',
@@ -37,7 +37,7 @@ class BuyerRegistration extends Component
         }
 
        $buyer = Buyer::create([
-            'full_name' => $this->full_name,
+            'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'phone' => $this->phone,

@@ -7,8 +7,8 @@
                  viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"></path>
             </svg>
-            <a href="{{ route('buyer.dashboard') }}">
-                <span class="hidden md:block text-xl font-bold text-gray-800">Buyer Dashboard</span>
+            <a href="{{ url('/') }}">
+                <span class="hidden md:block text-xl font-bold text-gray-800">Go To Home</span>
             </a>
         </div>
 
@@ -28,7 +28,7 @@
                         @endphp
                         <img class="w-8 h-8 rounded-full object-cover"
                             src="{{ $buyer->profile_image ? asset('storage/' . $buyer->profile_image) : 'https://i.pravatar.cc/40?img=12' }}" alt="User avatar">
-                        <span class="hidden md:inline text-gray-700 font-medium">{{ $buyer->full_name }}</span>
+                        <span class="hidden md:inline text-gray-700 font-medium">{{ $buyer->name }}</span>
                         <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path d="M19 9l-7 7-7-7"></path>

@@ -10,7 +10,7 @@ class PanjabiShow extends Component
 {
     public function render()
     {
-        $panjabis = Product::whereJsonContains('category', 'Panjabi')
+        $panjabis = Product::where('category_id', 37)
             ->latest()
             ->take(5)
             ->get();

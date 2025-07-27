@@ -9,14 +9,26 @@
     <div>
         <h1> এই সাইট টি এখন টেস্টিং মুডে আছে সিগরই চালু হবে ইনশা-আল্লাহ </h1>
     </div>
-    {{-- Product List --}}
 
     {{-- Livewire Components --}}
     <livewire:other-product-show />
     <livewire:gift-cart-show />
     <livewire:all-product-show />
     <livewire:panjabi-show />
-     
+    
+    {{-- Product List --}}
+  
+     <div class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold text-center mb-8 text-indigo-700">📂 সকল ক্যাটেগরি</h1>
+
+        <div class="bg-white shadow-xl rounded-xl p-6 space-y-3">
+            <ul class="space-y-2">
+                @foreach ($categories as $category)
+                    @include('frontend.partials.category-dropdown', ['category' => $category, 'level' => 0])
+                @endforeach
+            </ul>
+        </div>
+    </div>
     {{-- Scripts --}}
     @push('scripts')
         <script src="{{ asset('frontend/js/index.js') }}"></script>

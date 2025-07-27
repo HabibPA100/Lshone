@@ -9,11 +9,16 @@ class Product extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'category' => 'array',
+        'category_path' => 'array',
         'tags' => 'array',
         'colors' => 'array',
         'sizes' => 'array',
         'is_featured' => 'boolean',
         'published_at' => 'date',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

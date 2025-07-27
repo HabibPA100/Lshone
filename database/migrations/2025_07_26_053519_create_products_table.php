@@ -22,7 +22,8 @@ return new class extends Migration {
             $table->decimal('real_price', 10, 2);
 
             // Category & Seller
-            $table->json('category');
+            $table->json('category_path')->nullable(); // যেমন: [1, 3, 7]
+            $table->unsignedBigInteger('category_id'); // leaf category
             $table->unsignedBigInteger('seller_id');
 
             // Optional fields

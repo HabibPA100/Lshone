@@ -16,7 +16,8 @@
             <a href="{{ route('buyer.order.list') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🛒 Orders</a>
             <a href="{{ route('plans.index') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">♻️ Plane</a>
             <a href="{{ route('admin.subscriptions') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🪺 Subscriptions</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Messages</a>
+            <a href="{{ route('admin.categories.index') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⛓ Add Category</a>
+            <a href="{{ route('all.message') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Messages</a>
             <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⚙️ Settings</a>
              <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -57,6 +58,12 @@
             <div class="bg-white shadow-md rounded-xl p-6">
                 <h3 class="text-xl font-bold text-gray-700">Total Amount:</h3>
                 <p class="text-3xl font-semibold text-red-700 mt-2"><span> ৳{{ number_format($totalDeliveredAmount, 2) }}</span></p>
+            </div>
+            <div class="bg-white shadow-md rounded-xl p-6">
+                <a href="{{ route('all.message') }}">
+                    <h3 class="text-xl font-bold text-gray-700">Messages:</h3>
+                    <p class="text-3xl font-semibold text-red-700 mt-2">{{ $totalMessage ?? '0' }}</p>
+                </a>
             </div>
             
         </div>

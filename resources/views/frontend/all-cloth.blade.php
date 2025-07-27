@@ -67,7 +67,7 @@
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                     @foreach ($allCategories as $key => $name)
-                        <a href="{{ route('cart.category', $key) }}"
+                        <a href="{{ route('products.by-category', $key) }}"
                         class="flex items-center justify-center text-center text-white font-semibold py-3 px-4 rounded-lg 
                                 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-purple-600 hover:to-pink-500 
                                 transform hover:scale-105 transition duration-300 shadow-md hover:shadow-lg">

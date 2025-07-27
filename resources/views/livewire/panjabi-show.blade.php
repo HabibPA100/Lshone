@@ -2,8 +2,21 @@
 @if ($panjabis->isNotEmpty())
     <section class="bg-gray-100 py-6 px-4">
         <div class="max-w-7xl mx-auto">
-            <a href="{{ route('cart.category', 'Panjabi') }}">
-                <h1 class="text-2xl mb-2">রেডিমেড পাঞ্জাবী সমূহ</h1>
+            @php
+                // যদি তুমি জানো এইটা 'panjabi' ক্যাটেগরির পণ্য
+                $category = \App\Models\Category::where('slug', 'panjabi')->first(); // <== এই slug তুমি নিজে set করবে
+
+                $slugs = [];
+
+                while ($category) {
+                    array_unshift($slugs, $category->slug);
+                    $category = $category->parent;
+                }
+
+                $path = implode('/', $slugs);
+            @endphp
+            <a href="{{ route('products.by-category', $path) }}">
+                <h1 class="text-sm lg:text-3xl mb-2"> পাঞ্জাবী সমূহ দেখুন </h1>
             </a>
             <div class="flex flex-wrap -mx-2">
                 @foreach($panjabis as $panjabi)

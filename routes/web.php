@@ -40,7 +40,11 @@ Route::get('/contact-us', [ContactController::class,'index'])->name('contact');
 Route::post('/contact-store', [ContactController::class,'send'])->name('contact.send');
 Route::get('/terms-and-conditions', [TermsController::class,'index'])->name('terms.condition');
 Route::get('/view-cart-details/{id}', [CartViewController::class, 'show'])->name('cart.details');
-Route::get('/category/{category}', [GetCartController::class, 'showCategoryCart'])->name('cart.category');
+Route::get('/category/{categoryPath}', [GetCartController::class, 'showByCategoryPath'])
+    ->where('categoryPath', '.*')
+    ->name('products.by-category');
+// Route::get('/categories/{category}', [GetCartController::class, 'show'])->name('categories.show');
+
 Route::get('/cloth-shop', [AllClothController::class, 'index'])->name('all.cloth');
 Route::get('/cart-info', CartPage::class)->middleware(['buyer-auth']);
 Route::get('/all-product-list',[AllProductShowController::class,'index'])->name('all.product');

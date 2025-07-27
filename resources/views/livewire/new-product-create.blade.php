@@ -10,194 +10,133 @@
         </div>
     @endif
 
-    <form wire:submit.prevent="save" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded shadow">
-        <!-- Title -->
+    <form wire:submit.prevent="save" id="product-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-6 rounded-lg shadow-md">
+
+    {{-- Title --}}
         <div>
-            <label class="block font-medium mb-1">Title ( গুরুত্বপূর্ণ * )</label>
-            <input type="text" wire:model.defer="title" class="input" placeholder="Product Title">
+            <label for="title" class="block font-medium mb-1">Title (গুরুত্বপূর্ণ *)</label>
+            <input id="title" type="text" wire:model.defer="title" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Product Title" aria-label="Product Title">
             @error('title') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
-        <!-- Description -->
+        {{-- Description --}}
         <div class="md:col-span-2">
-            <label class="block font-medium mb-1">Description ( গুরুত্বপূর্ণ * ) </label>
-            <textarea wire:model.defer="description" class="input h-24" placeholder="Product Description"></textarea>
+            <label for="description" class="block font-medium mb-1">Description (গুরুত্বপূর্ণ *)</label>
+            <textarea id="description" wire:model.defer="description" class="w-full border-gray-300 rounded px-3 py-2 h-28 focus:ring-blue-500 focus:border-blue-500" placeholder="Product Description" aria-label="Product Description"></textarea>
             @error('description') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
-        <!-- Images -->
+        {{-- Product Image --}}
         <div>
-            <label class="block font-medium mb-1">Product Image Width (200px)	Height (200px) গুরুত্বপূর্ণ * </label>
-            <input type="file" wire:model="product_image" class="input">
+            <label for="product_image" class="block font-medium mb-1">Product Image (200x200px) *</label>
+            <input id="product_image" type="file" wire:model="product_image" class="w-full border-gray-300 rounded px-3 py-2 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             @if (is_object($product_image) && method_exists($product_image, 'temporaryUrl'))
-                <img src="{{ $product_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover">
+                <img src="{{ $product_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover rounded border">
             @elseif(is_string($product_image))
-                <img src="{{ asset('storage/' . $product_image) }}" class="mt-2 w-24 h-24 object-cover">
+                <img src="{{ asset('storage/' . $product_image) }}" class="mt-2 w-24 h-24 object-cover rounded border">
             @endif
             @error('product_image') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
+        {{-- Slash Image --}}
         <div>
-            <label class="block font-medium mb-1">Slash ImageWidth (400px)	Height (400px) গুরুত্বপূর্ণ * </label>
-            <input type="file" wire:model="slash_image" class="input">
+            <label for="slash_image" class="block font-medium mb-1">Slash Image (400x400px) *</label>
+            <input id="slash_image" type="file" wire:model="slash_image" class="w-full border-gray-300 rounded px-3 py-2 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
             @if (is_object($slash_image) && method_exists($slash_image, 'temporaryUrl'))
-                <img src="{{ $slash_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover">
+                <img src="{{ $slash_image->temporaryUrl() }}" class="mt-2 w-24 h-24 object-cover rounded border">
             @elseif(is_string($slash_image))
-                <img src="{{ asset('storage/' . $slash_image) }}" class="mt-2 w-24 h-24 object-cover">
+                <img src="{{ asset('storage/' . $slash_image) }}" class="mt-2 w-24 h-24 object-cover rounded border">
             @endif
             @error('slash_image') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
-        
-        {{-- Category Checkbox --}}
-        <div>
-            <p class="block font-semibold mb-2">Categories (যে কোন তিনটি) ( গুরুত্বপূর্ণ * )</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                @php
-                    $categoryOptions = [
-                        // 👔 পুরুষদের পোশাক
-                        'Gift' => 'গিফট প্যাক',
-                        'Others' => 'অন্যান্য',
-                        // 👔 পুরুষদের পোশাক
-                        'Panjabi' => 'পাঞ্জাবি',
-                        'Jubba' => 'জুব্বা',
-                        'Shirt' => 'শার্ট',
-                        'T-Shirt' => 'টি-শার্ট',
-                        'Pants' => 'প্যান্ট',
-                        'Jeans' => 'জিন্স',
-                        'Lungi' => 'লুঙ্গি',
-                        'Pajama' => 'পাজামা',
-                        'Suit' => 'সুট',
-                        'Waistcoat' => 'ওয়েস্টকোট',
-                        'Sweater' => 'সুইটার',
-                        'Jacket' => 'জ্যাকেট',
-                        'Blazer' => 'ব্লেজার',
-                        'Undershirt' => 'গেঞ্জি',
-                        'Underwear' => 'জাঙ্গিয়া',
 
-                        // 👗 নারীদের পোশাক
-                        'Saree' => 'শাড়ি',
-                        'Salwar Kameez' => 'সালওয়ার কামিজ',
-                        'Kurti' => 'কুর্তি',
-                        'Leggings' => 'লেগিংস',
-                        'Blouse' => 'ব্লাউজ',
-                        'Dupatta' => 'দুপাত্তা',
-                        'Hijab' => 'হিজাব',
-                        'Abaya' => 'আবায়া',
-                        'Burkha' => 'বোরখা',
-                        'Gown' => 'গাউন',
-                        'Lehenga' => 'লেহেঙ্গা',
-                        'Skirt' => 'স্কার্ট',
-                        'Top' => 'টপ',
-                        'Nighty' => 'নাইটি',
-                        'Bra' => 'ব্রা',
-                        'Panty' => 'প্যান্টি',
-                        'Camisole' => 'ক্যামিসোল',
-
-                        // 🧥 উভয় লিঙ্গের বা সাধারণ ব্যবহার
-                        'Cap' => 'টুপি',
-                        'Scarf' => 'স্কার্ফ',
-                        'Shoes' => 'জুতা',
-                        'Sandal' => 'স্যান্ডেল',
-                        'Slippers' => 'স্লিপার',
-                        'Socks' => 'মোজা',
-                        'Raincoat' => 'রেইনকোট',
-                        'Umbrella' => 'ছাতা (অ্যাকসেসরিজ)',
-
-                        // 👶 শিশুদের পোশাক
-                        'Baby Frock' => 'শিশুদের ফ্রক',
-                        'Baby Pajama' => 'শিশুদের পায়জামা',
-                        'Baby Shirt' => 'শিশুদের শার্ট',
-                        'Baby Shoes' => 'শিশুদের জুতা',
-                    ];
-                    @endphp
-
-
-                @foreach($categoryOptions as $value => $label)
-                    <label class="inline-flex items-center space-x-2">
-                        <input type="checkbox" wire:model="category" value="{{ $value }}" class="form-checkbox text-indigo-600 rounded">
-                        <span>{{ $label }}</span>
-                    </label>
-                @endforeach
-            </div>
-            @error('category') 
-                <span class="text-red-500 text-sm">{{ $message }}</span> 
-            @enderror
+        {{-- Category Selector --}}
+        <div class="md:col-span-2">
+            @livewire('category-selector')
+            @error('category') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
-        <!-- Status -->
+        {{-- Status --}}
         <div>
-            <label class="block font-medium mb-1">Status</label>
-            <select wire:model.defer="status" class="input">
+            <label for="status" class="block font-medium mb-1">Status</label>
+            <select id="status" wire:model.defer="status" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
                 <option value="in stock">In Stock</option>
                 <option value="out of stock">Out of Stock</option>
             </select>
         </div>
 
-        <!-- Prices -->
+        {{-- Real & Offer Price --}}
         <div>
-            <label class="block font-medium mb-1">Real Price ( গুরুত্বপূর্ণ * ) </label>
-            <input type="number" wire:model.defer="real_price" class="input" step="0.01">
+            <label for="real_price" class="block font-medium mb-1">Real Price (গুরুত্বপূর্ণ *)</label>
+            <input id="real_price" type="number" step="0.01" wire:model.defer="real_price" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
             @error('real_price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
         <div>
-            <label class="block font-medium mb-1">Offer Price ( গুরুত্বপূর্ণ * ) </label>
-            <input type="number" wire:model.defer="offer_price" class="input" step="0.01">
+            <label for="offer_price" class="block font-medium mb-1">Offer Price (গুরুত্বপূর্ণ *)</label>
+            <input id="offer_price" type="number" step="0.01" wire:model.defer="offer_price" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
             @error('offer_price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
-        
-        <!-- Stock Quantity -->
-         <div>
-            <label class="block font-medium mb-1">Stock Quantity ( গুরুত্বপূর্ণ * )</label>
-            <input type="text" wire:model.defer="stock_quantity" class="input">
+
+        {{-- Stock Quantity --}}
+        <div>
+            <label for="stock_quantity" class="block font-medium mb-1">Stock Quantity *</label>
+            <input id="stock_quantity" type="text" wire:model.defer="stock_quantity" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
             @error('stock_quantity') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
 
-        <!-- Additional Fields -->
+        {{-- Additional Fields --}}
         @foreach ([
-            'sku' => 'SKU', 'brand' => 'Brand', 'discount_percent' => 'Discount %',
-            'weight' => 'Weight (kg)',
-            'dimensions' => 'Dimensions (LxWxH)', 'rating' => 'Rating',
-            'quality' => 'Quality', 'warranty' => 'Warranty', 'shipping_info' => 'Shipping Info'
+            'sku' => 'SKU', 'brand' => 'Brand', 'discount_percent' => 'Discount (%)',
+            'weight' => 'Weight (kg)', 'dimensions' => 'Dimensions (LxWxH)', 
+            'rating' => 'Rating', 'quality' => 'Quality', 
+            'warranty' => 'Warranty', 'shipping_info' => 'Shipping Info'
         ] as $field => $label)
             <div>
-                <label class="block font-medium mb-1">{{ $label }}</label>
-                <input type="text" wire:model.defer="{{ $field }}" class="input">
+                <label for="{{ $field }}" class="block font-medium mb-1">{{ $label }}</label>
+                <input id="{{ $field }}" type="text" wire:model.defer="{{ $field }}" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
                 @error($field) <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
             </div>
         @endforeach
 
-        <!-- Tags, Colors, Sizes -->
+        {{-- Tags, Colors, Sizes --}}
         <div>
-            <label class="block font-medium mb-1">Tags (comma-separated)</label>
-            <input type="text" wire:model.defer="tags" class="input">
+            <label for="tags" class="block font-medium mb-1">Tags (comma-separated)</label>
+            <input id="tags" type="text" wire:model.defer="tags" class="w-full border-gray-300 rounded px-3 py-2">
         </div>
         <div>
-            <label class="block font-medium mb-1">Colors</label>
-            <input type="text" wire:model.defer="colors" class="input" placeholder="e.g., red,blue">
+            <label for="colors" class="block font-medium mb-1">Colors</label>
+            <input id="colors" type="text" wire:model.defer="colors" class="w-full border-gray-300 rounded px-3 py-2" placeholder="e.g., red,blue">
         </div>
         <div>
-            <label class="block font-medium mb-1">Sizes</label>
-            <input type="text" wire:model.defer="sizes" class="input" placeholder="e.g., S,M,L">
+            <label for="sizes" class="block font-medium mb-1">Sizes</label>
+            <input id="sizes" type="text" wire:model.defer="sizes" class="w-full border-gray-300 rounded px-3 py-2" placeholder="e.g., S,M,L">
         </div>
 
-        <!-- Date & Featured -->
+        {{-- Published At --}}
         <div>
-            <label class="block font-medium mb-1">Published At</label>
-            {{-- <input type="date" wire:model.defer="published_at" class="input"> --}}
-            <input type="date" wire:model="published_at" value="{{ \Carbon\Carbon::parse($published_at)->format('Y-m-d') }}" class="input" >
-
+            <label for="published_at" class="block font-medium mb-1">Published At</label>
+            <input id="published_at" type="date" wire:model="published_at" value="{{ \Carbon\Carbon::parse($published_at)->format('Y-m-d') }}" class="w-full border-gray-300 rounded px-3 py-2">
         </div>
-        {{-- <div class="flex items-center space-x-2">
-            <input type="checkbox" wire:model.defer="is_featured" class="rounded border-gray-300">
-            <label>Featured Product</label>
-        </div> --}}
 
-        <!-- Submit -->
+        <div class="flex items-center space-x-3">
+            <label for="is_featured" class="text-sm md:text-2xl font-medium text-red-700">এটি কি গিফট প্যাকেজ ?  </label>
+
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" wire:model="is_featured" id="is_featured" name="is_featured" class="sr-only peer">
+                
+                <div class="w-11 h-6 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-500 rounded-full peer peer-checked:bg-blue-600 transition-all duration-300 ease-in-out"></div>
+                
+                <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-300 transform peer-checked:translate-x-5"></div>
+            </label>
+        </div>
+
+        {{-- Submit Button --}}
         <div class="md:col-span-2">
-            <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
                 {{ $productId ? 'Update Product' : 'Create Product' }}
             </button>
         </div>
     </form>
+
      @livewire('product-list')
 </div>
