@@ -43,5 +43,8 @@
     <p class="mt-4 text-center text-gray-600">
       Don't have an account? <a href="{{ route('seller') }}" class="text-blue-600 hover:underline">বিক্রেতা</a>
     </p>
+    <p class="mt-4 text-center text-gray-600">
+      Admin Account Need ? <a href="{{ route('admin.account.create') }}" class="text-blue-600 hover:underline">এডমিন</a>
+    </p>
   </div>
 </div>

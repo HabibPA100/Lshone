@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\AdminSubscriptionController;
 use App\Http\Controllers\Admin\BuyerOrderListPDFController;
 use App\Http\Controllers\Admin\EditProductStatusController;
 
-Route::get('/create-admin-account', [AdminDashboardController::class,'create']);
+Route::get('/create-admin-account', [AdminDashboardController::class,'create'])->name('admin.account.create');
 
 
 Route::middleware('auth:admin')->prefix('admin')->group(function () {

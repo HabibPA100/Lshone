@@ -64,6 +64,8 @@ class AdminUserCreate extends Component
         ]);
 
         $this->resetForm();
+
+        return redirect()->route('login');
     }
 
     public function edit($id)

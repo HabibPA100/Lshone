@@ -1,5 +1,5 @@
 <div>
-@if ($others->isNotEmpty())
+@if (!empty($others))
     <section class="bg-gray-100 py-8 px-4">
         <div class="max-w-7xl mx-auto">
             @php
