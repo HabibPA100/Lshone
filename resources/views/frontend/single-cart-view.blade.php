@@ -19,11 +19,19 @@
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
         <!-- 🖼️ Product Image Section --> 
         <div class="md:col-span-5 space-y-4">
-            <img 
-                src="{{ asset('storage/' . $card->slash_image) }}" 
-                alt="{{ $card->title }}" 
-                class="w-full rounded-lg shadow-lg object-contain max-h-[400px]"
-            >
+            <div class="relative group w-full max-w-xl mx-auto">
+                <img 
+                    id="mainImage"
+                    src="{{ asset('storage/' . $card->slash_image) }}" 
+                    alt="{{ $card->title }}" 
+                    class="w-full rounded-lg shadow-lg object-contain max-h-[400px] cursor-zoom-in"
+                >
+
+                <div 
+                    id="zoomResult" 
+                    class="hidden absolute top-0 left-full ml-4 w-[430px] h-[400px] border rounded shadow-lg bg-no-repeat z-50"
+                ></div>
+            </div>
             
             <!-- 🧷 Related Image Thumbnails -->
             <div class="flex gap-3 overflow-x-auto scrollbar-hide">

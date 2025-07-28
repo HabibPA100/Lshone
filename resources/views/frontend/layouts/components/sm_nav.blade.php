@@ -23,7 +23,7 @@
     <!-- ভর্তি -->
     <a href="{{ route('buyer.dashboard') }}" class="flex flex-col items-center text-white hover:text-yellow-300 transition">
       <i class="fa-solid fa-cart-shopping text-xl"></i>
-      <span class="text-xs mt-1">কার্ড</span>
+      <span class="text-xs mt-1">অর্ডার</span>
     </a>
 
     <!-- লগইন -->

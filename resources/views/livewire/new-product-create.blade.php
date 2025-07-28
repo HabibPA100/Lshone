@@ -79,7 +79,7 @@
 
         {{-- Stock Quantity --}}
         <div>
-            <label for="stock_quantity" class="block font-medium mb-1">Stock Quantity *</label>
+            <label for="stock_quantity" class="block font-medium mb-1">Stock Quantity (গুরুত্বপূর্ণ *)</label>
             <input id="stock_quantity" type="text" wire:model.defer="stock_quantity" class="w-full border-gray-300 rounded px-3 py-2 focus:ring-blue-500 focus:border-blue-500">
             @error('stock_quantity') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
         </div>
