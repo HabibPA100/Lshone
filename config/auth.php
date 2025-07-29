@@ -54,6 +54,27 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        // ✅ Add this 👇
+        'buyers' => [
+            'provider' => 'buyers',
+            'table' => 'buyer_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'sellers' => [
+            'provider' => 'sellers',
+            'table' => 'seller_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'admins' => [
+            'provider' => 'admin_user',
+            'table' => 'admin_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),

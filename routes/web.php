@@ -1,15 +1,8 @@
 <?php
 
-use App\Livewire\Cart;
-use App\Livewire\CardView;
 use App\Livewire\CartPage;
-use App\Livewire\UserLogin;
-use App\Livewire\Admin\AdminUser;
-use App\Livewire\NewProductCreate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Buyer\BuyerDashboard;
-use App\Livewire\Seller\SellerDashboard;
 use App\Http\Controllers\TermsController;
 use App\Livewire\Buyer\BuyerRegistration;
 use App\Http\Controllers\LogOutController;
@@ -24,6 +17,7 @@ use App\Http\Controllers\CartViewController;
 use App\Http\Controllers\CommissionController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AllProductShowController;
+use App\Http\Controllers\Auth\UserLoginController;
 use App\Http\Controllers\BuyerDashboardController;
 use App\Http\Controllers\SellerDashboardController;
 use App\Http\Controllers\Seller\NotificationController;
@@ -51,7 +45,7 @@ Route::get('/all-product-list',[AllProductShowController::class,'index'])->name(
 
 Route::get('/register-as-buyer', BuyerRegistration::class)->name('buyer');
 Route::get('/register-as-seller', SellerRegistration::class)->name('seller');
-Route::get('/user/login', UserLogin::class)->name('login');
+Route::get('/user/login', [UserLoginController::class, 'index'])->name('login');
 
 Route::middleware('auth:buyer')->prefix('buyer')->group(function () {
     
@@ -83,4 +77,5 @@ Route::middleware('auth:seller')->prefix('seller')->group(function () {
 Route::post('/logout', [LogOutController::class, 'logout'])->name('logout');
 
 require __DIR__.'/home.php';
+require __DIR__.'/password-reset.php';
 require __DIR__.'/admin.php';
