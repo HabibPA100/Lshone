@@ -16,7 +16,7 @@
                 $path = implode('/', $slugs);
             @endphp
             <a href="{{ route('products.by-category', $path) }}">
-                <h1 class="text-2xl mb-2">প্রিয় গিফট প্যাকস</h1>
+                <h1>প্রিয় গিফট প্যাকস</h1>
             </a>
             <div class="flex flex-wrap -mx-2">
                 @foreach($gifts as $gift)

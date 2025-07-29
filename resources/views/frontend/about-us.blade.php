@@ -6,7 +6,7 @@
     <div class="bg-gray-50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-extrabold text-white mb-4">আমাদের সম্পর্কে</h1>
+                <h1>আমাদের সম্পর্কে</h1>
                 <p class="text-lg text-gray-600 mb-8">Live Shope - একটি বিশ্বস্ত অনলাইন মার্কেটপ্লেস যেখানে আপনি নিরাপদে এবং সহজে যে কোনো প্রোডাক্ট বেচা কেনা করতে পারবেন।</p>
             </div>
 

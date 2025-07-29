@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="mb-6 flex justify-between items-center">
-    <h1 class="text-2xl font-semibold">📂 All Categories</h1>
+    <h1>📂 All Categories</h1>
     <a href="{{ route('admin.categories.create') }}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow">
         ➕ Add New Category
     </a>
